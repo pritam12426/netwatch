@@ -1,0 +1,54 @@
+// https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#starting-a-new-debug-session
+// https://zed.dev/docs/languages/cpp#debugging
+[
+	{
+		"label": "Debug netwatch daemon",
+		"build": {
+			"command": "make",
+			"args": [
+				"debug",
+				"-B",
+				"O_DEBUG=1"
+			],
+			"cwd": "$ZED_WORKTREE_ROOT",
+			"shell": {
+				"with_arguments": {
+					"program": "/bin/sh",
+					"args": []
+				}
+			}
+		},
+		"program": "$ZED_WORKTREE_ROOT/netwatch",
+		"args": [
+			"--verbose",
+		],
+		"request": "launch",
+		"adapter": "CodeLLDB"
+	},
+
+	{
+		"label": "Debug netwatch-cli client",
+		"build": {
+			"command": "make",
+			"args": [
+				"debug",
+				"-B",
+				"O_DEBUG=1"
+			],
+			"cwd": "$ZED_WORKTREE_ROOT",
+			"shell": {
+				"with_arguments": {
+					"program": "/bin/sh",
+					"args": []
+				}
+			}
+		},
+		"program": "$ZED_WORKTREE_ROOT/netwatch-cli",
+		"args": [
+			"--log-level",
+			"debug"
+		],
+		"request": "launch",
+		"adapter": "CodeLLDB"
+	}
+]

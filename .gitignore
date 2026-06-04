@@ -1,0 +1,9 @@
+/build/
+compile_commands.json
+/pushfile
+/netwatch
+/nob
+/nob.old
+/netwatch-cli
+src/*.o
+/.clangd
